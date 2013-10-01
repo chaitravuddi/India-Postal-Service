@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>India Post Online Package Delivery System</title>
+
+<body><font size="5" color="red"><center><h1>INDIAN POST ONLINE PACKAGE DELIVERY SYSTEM</h1></font>
+<font size="4" color="blue"><center><h3>Registration has been completed successfully</h3></font>
+
+<script type = "text/javascript" >
+function isEmpty(s,txt_fld)
+{
+if ((s == null) || (s.length == 0)){
+alert("Enter Value for "+txt_fld);
+return false;
+}//end of if
+for (var i=0; i<s.length; i++){
+if(s.charAt(i) != " ")
+return true;
+else{
+alert("Enter Value for "+txt_fld);
+return false
+}//end of else
+}//end of for
+return true;
+}
+function validate()
+{
+                if(!isEmpty(document.RegisterForm.ptime.value,"ptime"))
+                {
+                        document.RegisterForm.ptime.focus();
+                        return false;
+                }
+                if(document.RegisterForm.wparcel.value.length==0)
+		{
+			alert("Please Enter The Weight of the parcel");
+			document.RegisterForm.wparcel.focus();
+			return false;
+		}
+                
+}
+</script>
+<form action = "http://shielded-brushland-7537.herokuapp.com/" method = "post" name="RegisterForm" onsubmit="document.getElementById('button')">
+     
+<table width="90%" align="center">
+<tr>
+<td>
+<table width="86%" align="center" >
+<tr>
+<td width="7%" >Pickup Date & Time</td>
+<td width="7%">:</td>
+<td width="16%"><input type="text" name="ptime" class="txtfld"  size="25" ></td>
+</tr>
+<tr>
+<td>Weight of the Parcel</td>
+<td>:</td>
+<td><input type="text" name="wparcel" class="txtfld" size="25"></td>
+</tr>
+<tr>
+
+<tr>
+<td colspan="3" height="1"></td>
+</tr>
+
+<td colspan="5" align="center">
+<input type="submit" name="button" value="Submit" onclick="return validate();" ></td>
+</tr>
+
+<td colspan="5" align="center">
+<input type="reset" name="button"  value="Cancel" >	</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+</body>
+</head>
+</html>
